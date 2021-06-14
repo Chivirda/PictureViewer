@@ -37,6 +37,8 @@ namespace PictureViewer
             this.clearButton = new System.Windows.Forms.Button();
             this.backgroundButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -74,6 +76,8 @@ namespace PictureViewer
             // CheckBox1
             // 
             this.CheckBox1.AutoSize = true;
+            this.CheckBox1.Checked = true;
+            this.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CheckBox1.Location = new System.Drawing.Point(3, 297);
             this.CheckBox1.Name = "CheckBox1";
@@ -81,6 +85,7 @@ namespace PictureViewer
             this.CheckBox1.TabIndex = 1;
             this.CheckBox1.Text = "Stretch";
             this.CheckBox1.UseVisualStyleBackColor = true;
+            this.CheckBox1.CheckedChanged += new System.EventHandler(this.CheckBox1_CheckedChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -115,6 +120,7 @@ namespace PictureViewer
             this.clearButton.TabIndex = 1;
             this.clearButton.Text = "Очистить рисунок";
             this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // backgroundButton
             // 
@@ -125,6 +131,7 @@ namespace PictureViewer
             this.backgroundButton.TabIndex = 2;
             this.backgroundButton.Text = "Установить цвет фона";
             this.backgroundButton.UseVisualStyleBackColor = true;
+            this.backgroundButton.Click += new System.EventHandler(this.backgroundButton_Click);
             // 
             // closeButton
             // 
@@ -135,6 +142,14 @@ namespace PictureViewer
             this.closeButton.TabIndex = 3;
             this.closeButton.Text = "Закрыть";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All file" +
+    "s (*.*)|*.*";
+            this.openFileDialog1.Title = "Выбор файла изображения";
             // 
             // Form1
             // 
@@ -163,6 +178,8 @@ namespace PictureViewer
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button backgroundButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
